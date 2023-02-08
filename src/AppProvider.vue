@@ -8,13 +8,11 @@
 import { provide } from 'vue';
 import App from './App.vue';
 import ToastProvider from './components/ToastProvider.vue';
-import { injectionKey  } from './constants/injectionKeys';
+import { toastKey  } from './constants/injectionKeys';
 
-const data = {
-  "info": "SHOW INFO TOAST", 
-  "success": "SHOW SUCCESS TOAST",
-  "error": "SHOW ERROR TOAST",
-};
-
-provide(injectionKey, data);
+provide(toastKey, {
+  info: "SHOW INFO TOAST",
+  success: "SHOW SUCCESS TOAST",
+  error: "SHOW ERROR TOAST",
+  });
 </script>

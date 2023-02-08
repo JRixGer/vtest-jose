@@ -20,11 +20,11 @@
 <script setup lang="ts">
   import { inject, ref } from 'vue';
   import { useToast } from './composables/useToast';
-  import { injectionKey } from './constants/injectionKeys';
+  import { toastKey } from './constants/injectionKeys';
 
   let eleId: number = 0;
   let curDiv: string = "";
-  let toastData: any = inject(injectionKey);
+  let toastData: any = inject(toastKey);
  
   const triggerToast = (m: string) => {
     eleId = useToast(m, toastData, 700, eleId)
