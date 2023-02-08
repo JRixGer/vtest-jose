@@ -23,17 +23,17 @@
   import { injectionKey } from './constants/injectionKeys';
 
   let eleId: number = 0;
-  let curDiv:string = "";
+  let curDiv: string = "";
   let toastData: any = inject(injectionKey);
  
   const triggerToast = (m: string) => {
     eleId = useToast(m, toastData, 700, eleId)
     curDiv = `id${eleId}`;
-    const mDiv = document.getElementById(curDiv);
-    if(mDiv) {
+    const curDivStyle = document.getElementById(curDiv);
+    if(curDivStyle) {
       let a: number;
       a = window.setTimeout(function() {
-        mDiv?.setAttribute("style", "position: fixed; left: 1rem; bottom: 1rem; background-color: #222222; min-height: 2.5rem; max-width: 4.5rem; border-radius: 0.25rem; padding: 0.75rem; z-index: 999998; display: flex; justify-content: flex-start; align-items: flex-start; animation: toast-slide-up 0.3s; will-change: transform; display: none;");		
+        curDivStyle?.setAttribute("style", "position: fixed; left: 1rem; bottom: 1rem; background-color: #222222; min-height: 2.5rem; max-width: 4.5rem; border-radius: 0.25rem; padding: 0.75rem; z-index: 999998; display: flex; justify-content: flex-start; align-items: flex-start; animation: toast-slide-up 0.3s; will-change: transform; display: none;");		
       }, 2500);
     }
     
