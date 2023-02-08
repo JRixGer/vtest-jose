@@ -1,5 +1,5 @@
-export function useToast(messType: string, message: object, duration: number, eleId: number) {
-	const arrayMess = JSON.parse(JSON.stringify(message));
+export function useToast(messType: string, toastData: object, duration: number, eleId: number) {
+	const arrayMess = JSON.parse(JSON.stringify(toastData));
 	const box = document.getElementById('messbox');
 	const el = document.createElement("div");
 	el.textContent = arrayMess[messType];
