@@ -3,8 +3,8 @@ export function useToast(messType: string, message: object, duration: number, da
 	const box = document.getElementById('messbox');
 	const el = document.createElement("div");
 	el.textContent = arrayMess[messType];
-	let cls = "";
-	let clsDefault = "p-3 rounded-lg border border-solid border-indigo-500 bg-indigo-100 w-full ";
+	let cls: string = "";
+	let clsDefault: string = "p-3 rounded-lg border border-solid border-indigo-500 bg-indigo-100 w-full ";
 	if(messType=='success') { 
 		cls = "bg-green-100 border-green-500";
 	} else if(messType=='error') {
