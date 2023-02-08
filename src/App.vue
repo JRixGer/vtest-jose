@@ -27,7 +27,7 @@
   const curDiv = ref("");
   toastData.value = inject(injectionKey);
   
-  const triggerToast = (m: any) => {
+  const triggerToast = (m: string) => {
     dataId.value = useToast(m, toastData.value, 700, dataId.value)
     curDiv.value = `id${dataId.value}`;
     const mDiv = document.getElementById(curDiv.value);
