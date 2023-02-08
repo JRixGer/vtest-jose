@@ -1,4 +1,4 @@
-export function useToast(messType: string, message: object, duration: number, dataId: number) {
+export function useToast(messType: string, message: object, duration: number, eleId: number) {
 	const arrayMess = JSON.parse(JSON.stringify(message));
 	const box = document.getElementById('messbox');
 	const el = document.createElement("div");
@@ -10,8 +10,8 @@ export function useToast(messType: string, message: object, duration: number, da
 	} else if(messType=='error') {
 		cls = "bg-red-100 border-red-500";
 	}
-	el.setAttribute('id', `id${dataId+=1}`);
+	el.setAttribute('id', `id${eleId+=1}`);
 	el.setAttribute('class', clsDefault+cls);
 	box?.appendChild(el);
-	return dataId;
+	return eleId;
 }

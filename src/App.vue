@@ -22,13 +22,13 @@
   import { useToast } from './composables/useToast';
   import { injectionKey } from './constants/injectionKeys';
 
-  let dataId: number = 0;
+  let eleId: number = 0;
   let curDiv:string = "";
   let toastData: any = inject(injectionKey);
  
   const triggerToast = (m: string) => {
-    dataId = useToast(m, toastData, 700, dataId)
-    curDiv = `id${dataId}`;
+    eleId = useToast(m, toastData, 700, eleId)
+    curDiv = `id${eleId}`;
     const mDiv = document.getElementById(curDiv);
     if(mDiv) {
       let a: number;
