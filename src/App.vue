@@ -29,7 +29,7 @@
   const triggerToast = (m: string) => {
     eleId = useToast(m, toastData, 700, eleId)
     curDiv = `id${eleId}`;
-    const curDivStyle = document.getElementById(curDiv);
+    const curDivStyle: any = document.getElementById(curDiv);
     if(curDivStyle) {
       let a: number;
       a = window.setTimeout(function() {
