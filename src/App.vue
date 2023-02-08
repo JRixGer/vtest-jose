@@ -24,7 +24,7 @@
 
   let dataId: number = 0;
   let curDiv:string = "";
-  const toastData: any = inject(injectionKey);
+  let toastData: any = inject(injectionKey);
  
   const triggerToast = (m: string) => {
     dataId = useToast(m, toastData, 700, dataId)
