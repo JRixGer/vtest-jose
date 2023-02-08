@@ -21,16 +21,15 @@
   import { inject, ref } from 'vue';
   import { useToast } from './composables/useToast';
   import { injectionKey } from './constants/injectionKeys';
-  
-  const toastData = ref();
-  const dataId = ref(0);
-  const curDiv = ref("");
-  toastData.value = inject(injectionKey);
-  
+
+  let dataId: number = 0;
+  let curDiv:string = "";
+  const toastData: any = inject(injectionKey);
+ 
   const triggerToast = (m: string) => {
-    dataId.value = useToast(m, toastData.value, 700, dataId.value)
-    curDiv.value = `id${dataId.value}`;
-    const mDiv = document.getElementById(curDiv.value);
+    dataId = useToast(m, toastData, 700, dataId)
+    curDiv = `id${dataId}`;
+    const mDiv = document.getElementById(curDiv);
     if(mDiv) {
       let a: number;
       a = window.setTimeout(function() {
